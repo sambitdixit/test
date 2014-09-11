@@ -1,0 +1,31 @@
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=1, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=1, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=1, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:49937
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = testing/hive/warehouse/books/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 2 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 7 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile testing/hive/warehouse/books/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 504 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped

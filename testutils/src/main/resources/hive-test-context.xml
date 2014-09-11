@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:hdp="http://www.springframework.org/schema/hadoop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/hadoop http://www.springframework.org/schema/hadoop/spring-hadoop.xsd">
+
+	<context:property-placeholder
+		location="hadoop-test.properties,hive-test.properties"/>
+	 
+	<bean id="hadoopCluster" class="com.sambit.testutils.hadoop.test.QuantumClusterFactoryBean">
+		<property name="clusterName" value="HiveClusterTests"/>
+		<property name="clusterType" value="hadoop"/>
+		<property name="noOfNodes" value="1"/>
+		<property name="autoStart" value="true"/>
+		
+	</bean>
+	
+	<bean id="hadoopConfiguration" class="com.sambit.testutils.hadoop.test.QuantumConfigurationFactoryBean">
+		<property name="cluster" ref="hadoopCluster"/>
+	</bean>
+		
+	
+	<bean id="hadoopFs"
+		class="org.springframework.data.hadoop.fs.FileSystemFactoryBean">
+		<property name="configuration" ref="hadoopConfiguration"/>
+	</bean>
+
+	<hdp:hive-server port="${hive.port}"
+		properties-location="hive.properties" />
+		
+	<hdp:hive-client-factory host="${hive.host}"
+		port="${hive.port}" />
+	<hdp:hive-template id="hiveTemplate" />
+
+</beans>
