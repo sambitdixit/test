@@ -198,8 +198,21 @@
 			<version>${commons-lang.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.jdo</groupId>
+			<artifactId>jdo2-api</artifactId>
+			<version>2.2</version>
+		</dependency>
 
-	</dependencies>
+		<dependency>
+			<groupId>sqlline</groupId>
+			<artifactId>sqlline</artifactId>
+			<version>1_0_2</version>
+		</dependency>
+
+	</dependencies> 
+
+
 
 	<version>0.0.1-SNAPSHOT</version>
 </project>

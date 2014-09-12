@@ -12,7 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:sample-hadoop-context.xml")
-@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
+//@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 public class HDFSFileManagerTest {
 	
 	private static Logger log = LoggerFactory.getLogger(HDFSFileManagerTest.class);
@@ -23,9 +23,15 @@ public class HDFSFileManagerTest {
 	
 	@Test
 	public void testCopyAndReplaceFile() {
-		boolean isCopied = fileManager.copyAndReplaceFile("books", "csv", "/Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data", "testing/hive/warehouse/books", false);
+		boolean isCopied = fileManager.copyAndReplaceFile("books", "csv", "/Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data", "testing/hive/warehouse", false);
 		log.debug("IsFileCopied = {}",isCopied);
 		Assert.assertEquals(true, isCopied);
+		boolean isRemoved = fileManager.checkAndRemoveFile("books", "csv","testing/hive/warehouse", false);
+		log.debug("IsFileRemoved = {}",isRemoved);
+		Assert.assertEquals(true, isRemoved);
+		boolean fileExist = fileManager.testFileExist("books", "csv","testing/hive/warehouse", false);
+		log.debug("fileExist = {}",fileExist);
+		Assert.assertEquals(true, fileExist);
 		//fileManager.checkAndRemoveFile("Batting", "csv","/user/hive/warehouse", false);
 	}
 

@@ -7,13 +7,9 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 		http://www.springframework.org/schema/hadoop http://www.springframework.org/schema/hadoop/spring-hadoop.xsd">
 
-	<import resource="hadoop-test-context.xml"/>
+	<import resource="hive-test-context.xml"/>
 	 
-	
-	<bean id="hdfsFileManager"
-		class="com.sambit.testutils.hadoop.test.HDFSFileManager">
-		<constructor-arg name="configuration" ref="hadoopConfiguration" />
-	</bean>
+
 	
 	<bean id="hiveDaoImpl"
 		class="com.sambit.testutils.hadoop.test.HiveDAOImpl">
