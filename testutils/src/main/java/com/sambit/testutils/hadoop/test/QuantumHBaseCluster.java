@@ -48,6 +48,7 @@ public class QuantumHBaseCluster implements QuantumCluster {
 	 */
 	public QuantumHBaseCluster(String clusterName) {
 		this.clusterName = clusterName;
+		this.hbaseTestingUtility  = new HBaseTestingUtility();
 	}
 
 	/**
@@ -60,6 +61,7 @@ public class QuantumHBaseCluster implements QuantumCluster {
 	public QuantumHBaseCluster(String clusterName, int noOfNodes) {
 		this.clusterName = clusterName;
 		this.noOfNodes = noOfNodes;
+		this.hbaseTestingUtility  = new HBaseTestingUtility();
 	}
 	
 
@@ -91,6 +93,7 @@ public class QuantumHBaseCluster implements QuantumCluster {
 			}
 
 			try {
+				
 			   hbaseTestingUtility.startMiniCluster(noOfNodes);
 			} catch (Exception e) {
 				log.error(e);

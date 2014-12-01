@@ -12,8 +12,8 @@
 	 
 	<bean id="hadoopCluster" class="com.sambit.testutils.hadoop.test.QuantumClusterFactoryBean">
 		<property name="clusterName" value="HadoopClusterTests"/>
-		<property name="clusterType" value="hadoop"/>
-		<property name="noOfNodes" value="1"/>
+		<property name="clusterType" value="hbase"/>
+		<property name="noOfNodes" value="2"/>
 		<property name="autoStart" value="true"/>
 		
 	</bean>

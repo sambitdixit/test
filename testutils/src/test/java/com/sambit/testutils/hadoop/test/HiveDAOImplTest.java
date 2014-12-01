@@ -22,8 +22,8 @@ public class HiveDAOImplTest {
 	@Test
 	public void testCreateTable() {
 		//Long count = hiveDao.getRecordCount("sample_07");
-		//List<String> results = hiveDao.executeQuery("create table temp(name string)", new HashMap());
-		List<String> results = hiveDao.executeQuery("show tables", new HashMap());
+		List<String> results = hiveDao.executeQuery("create table temp(name string)", new HashMap());
+		results = hiveDao.executeQuery("show tables", new HashMap());
 		System.out.println("Results == " + results);
 		Assert.assertNotNull(results);
 		

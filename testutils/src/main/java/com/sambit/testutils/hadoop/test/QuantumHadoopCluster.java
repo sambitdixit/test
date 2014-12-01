@@ -9,7 +9,7 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.LocalFileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.hdfs.MiniDFSCluster;
-import org.apache.hadoop.mapred.JobConf;
+import org.apache.hadoop.hive.conf.HiveConf.ConfVars;
 import org.springframework.data.hadoop.test.support.compat.MiniMRClusterCompat;
 
 /**
@@ -96,8 +96,8 @@ public class QuantumHadoopCluster implements QuantumCluster {
 
 			log.info("Starting cluster=" + clusterName);
 
-			Configuration config = new JobConf();
-
+			Configuration config = new Configuration();
+			
 			// umask trick
 			String umask = getCurrentUmask(tmpDir, config);
 			if (umask != null) {
@@ -126,7 +126,10 @@ public class QuantumHadoopCluster implements QuantumCluster {
 					noOfNodes, config, fs, this.getClass().getClassLoader());
 
 			configuration = MiniMRClusterCompat.getConfiguration(mrClusterObject);
-
+			
+			System.setProperty(ConfVars.METASTOREWAREHOUSE.toString(), testBuildDataDir  +
+		            "hive-test/target/hive/warehouse");
+			
 			// set default uri again in case it wasn't updated
 			FileSystem.setDefaultUri(configuration, fs.getUri());
 

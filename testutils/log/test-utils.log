@@ -315,3 +315,952 @@ INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clus
 INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
 INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
 INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=1, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:58246
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = testing/hive/warehouse/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 9 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile testing/hive/warehouse/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 100 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 4 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 6 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:58246/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:58246/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 33 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 38 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=1, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:58304
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:58331
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = testing/hive/warehouse/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 60 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile testing/hive/warehouse/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 88 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 2 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 3 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:58331/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:38)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:58331/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 33 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 12 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:58368
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = testing/hive/warehouse/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 65 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile testing/hive/warehouse/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 101 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 2 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 3 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - fileExist = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 1 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 2 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:58368/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:41)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:58368/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 33 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 11 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:58412
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = testing/hive/warehouse/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 2 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 61 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile testing/hive/warehouse/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 98 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 5 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - fileExist = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 2 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 4 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:58412/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:58412/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 33 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 13 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:58483
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = testing/hive/warehouse/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 2 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 59 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile testing/hive/warehouse/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 101 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 4 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 6 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - fileExist = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 2 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 4 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:58483/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:47)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:58483/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 33 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 15 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:54255
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = testing/hive/warehouse/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 4 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 11 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile testing/hive/warehouse/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 76 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 4 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 6 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - fileExist = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 5 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:54255/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:54255/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 34 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 84 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:54300
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:54336
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = /user/sambitd/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 2 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 10 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile /user/sambitd/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 112 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 4 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 6 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - fileExist = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 5 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:54336/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:52)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:54336/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 34 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 16 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:54373
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = /user/sambitd/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 11 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile /user/sambitd/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 173 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 4 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 5 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - fileExist = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 2 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 3 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:54373/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:54373/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 34 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 12 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:54410
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = /user/sambitdixit/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 3 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile /user/sambitdixit/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 28 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 5 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 7 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - fileExist = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 4 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:54410/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:54410/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 34 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 16 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hadoop]
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Dfs cluster uri= hdfs://localhost:54560
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = /user/sambitdixit/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 3 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile /user/sambitdixit/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 86 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 4 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 6 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - fileExist = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 5 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:54560/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:54560/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 34 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 18 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHadoopCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hbase]
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Starting cluster=HadoopClusterTests
+ERROR: com.sambit.testutils.hadoop.test.QuantumHBaseCluster - java.lang.NullPointerException
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hbase]
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Dfs cluster uri= hdfs://localhost:54610
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = /user/sambitdixit/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 3 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile /user/sambitdixit/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 20 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 5 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - fileExist = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 5 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:54610/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:467)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:683)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:390)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:197)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:54610/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 34 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 11 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hbase]
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Dfs cluster uri= hdfs://localhost:59319
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = /user/sambitdixit/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 2 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 2 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile /user/sambitdixit/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 88 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 6 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 8 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - fileExist = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 4 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:59319/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:60)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:59319/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 34 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 12 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Building new cluster for QuantumClusterInfo=QuantumClusterInfo [noOfNodes=2, clusterName=HadoopClusterTests, clusterType=hbase]
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Checking if cluster=HadoopClusterTests needs to be started
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Starting cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Dfs cluster uri= hdfs://localhost:59399
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Started cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - sourceFile to be copied = /Users/sambitdixit/git/spring-hadoop/spring-hadoop-build-tests/src/test/resources/data/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile to be copied = sambitdixit/books.csv
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 1 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for createDirectoryIfNotExist = 4 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManager - destFile sambitdixit/books.csv copied to hdfs
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for copyAndReplaceFile = 23 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileCopied = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 4 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 6 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - fileExist = true
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testDirectoryExist = 3 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSPathUtil - Time taken by formatByDate is 0 ms
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for testFileExist = 5 ms
+ERROR: com.sambit.testutils.hadoop.test.HDFSFileManager - error in checkAndRemoveFile
+org.springframework.data.hadoop.HadoopException: Cannot delete (all) resources File does not exist: hdfs://localhost:59399/user/sambitdixit/books
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:777)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:743)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:739)
+	at com.sambit.testutils.hadoop.test.HDFSFileManager.checkAndRemoveFile(HDFSFileManager.java:73)
+	at com.sambit.testutils.hadoop.test.HDFSFileManagerTest.testCopyAndReplaceFile(HDFSFileManagerTest.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:47)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:44)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:72)
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:81)
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:72)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:271)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:216)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:82)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:238)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:63)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:236)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:53)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:229)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:60)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:67)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:309)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:162)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:50)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192)
+Caused by: java.io.FileNotFoundException: File does not exist: hdfs://localhost:59399/user/sambitdixit/books
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1128)
+	at org.apache.hadoop.hdfs.DistributedFileSystem$17.doCall(DistributedFileSystem.java:1120)
+	at org.apache.hadoop.fs.FileSystemLinkResolver.resolve(FileSystemLinkResolver.java:81)
+	at org.apache.hadoop.hdfs.DistributedFileSystem.getFileStatus(DistributedFileSystem.java:1120)
+	at org.springframework.data.hadoop.fs.FsShell.rm(FsShell.java:761)
+	... 34 more
+INFO : com.sambit.testutils.hadoop.test.HDFSFileManager - Time taken for checkAndRemoveFile = 12 ms
+DEBUG: com.sambit.testutils.hadoop.test.HDFSFileManagerTest - IsFileRemoved = false
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Checking if cluster=HadoopClusterTests needs to be stopped
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Stopped cluster=HadoopClusterTests
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Received shutdown hook, about to call doClose()
+INFO : com.sambit.testutils.hadoop.test.QuantumClusterManager - Closing all clusters handled by this manager
+INFO : com.sambit.testutils.hadoop.test.QuantumHBaseCluster - Checking if cluster=HadoopClusterTests needs to be stopped
